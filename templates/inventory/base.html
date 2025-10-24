@@ -1,17 +1,23 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>sdhsjhd</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>body{font-family:system-ui;margin:2rem;} a{margin-right:1rem}</style>
-  </head>
-  <body>
-    <nav>
-      <a href="{% url 'video_list' %}">movies</a>
-      <a href="{% url 'video_create' %}">Add New Video</a>
-    </nav>
-    <hr>
-    {% block content %}{% endblock %}
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Store</title>
+</head>
+<body>
+    <header style="background:#eee;padding:10px;">
+        <h2>My Video Store</h2>
+        <hr>
+    </header>
+
+    <main style="margin:20px;">
+        {% block content %}
+        <!-- Content from child templates will appear here -->
+        {% endblock %}
+    </main>
+
+    <footer style="background:#eee;padding:10px;text-align:center;">
+        <p>© 2025 Video Store</p>
+    </footer>
+</body>
 </html>
