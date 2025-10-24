@@ -1,13 +1,22 @@
 {% extends "inventory/base.html" %}
 {% block content %}
-<h1>My Videoss</h1>
+<h1>Video List</h1>
+
 <table border="1" cellpadding="6">
   <tr>
-    <th>Title</th><th>Year</th><th>Genre</th><th>Actions</th>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Genre</th>
+    <th>Actions</th>
   </tr>
+
   {% for v in videos %}
   <tr>
-    <td><a href="{% url 'video_detail' v.pk %}">{{ v.movie_title }}</a></td>
+    <td>
+      <a href="{% url 'video_detail' v.pk %}">
+        {{ v.movie_title }}
+      </a>
+    </td>
     <td>{{ v.release_year }}</td>
     <td>{{ v.get_movie_genre_display }}</td>
     <td>
@@ -16,7 +25,9 @@
     </td>
   </tr>
   {% empty %}
-  <tr><td colspan="4">No videos yet.</td></tr>
+  <tr>
+    <td colspan="4">No videos yet.</td>
+  </tr>
   {% endfor %}
 </table>
 {% endblock %}
