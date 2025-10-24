@@ -21,8 +21,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose Django dev port
-EXPOSE 8000
+EXPOSE 8080
 
 # For dev we’ll just run the Django server.
 # For production you’d switch to gunicorn and a real DB.
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
