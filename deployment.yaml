@@ -13,8 +13,8 @@ spec:
         app: django-app
     spec:
       containers:
-        - name: django-container
-          image: mydjangoapp:v2
-          imagePullPolicy: Never
-          ports:
-            - containerPort: 8000
+      - name: django-container
+        image: mydjangoapp:latest
+        imagePullPolicy: Never   # <-- required for Minikube local image
+        ports:
+        - containerPort: 8000
