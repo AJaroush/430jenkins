@@ -1,22 +1,33 @@
-{% extends "base.html" %}
-{% block content %}
-<h1>My Videos</h1>
-<table border="1" cellpadding="6">
-  <tr>
-    <th>Title</th><th>Year</th><th>Genre</th><th>Actions</th>
-  </tr>
-  {% for v in videos %}
-  <tr>
-    <td><a href="{% url 'video_detail' v.pk %}">{{ v.movie_title }}</a></td>
-    <td>{{ v.release_year }}</td>
-    <td>{{ v.get_movie_genre_display }}</td>
-    <td>
-      <a href="{% url 'video_update' v.pk %}">Edit</a>
-      <a href="{% url 'video_delete' v.pk %}">Delete</a>
-    </td>
-  </tr>
-  {% empty %}
-  <tr><td colspan="4">No videos yet.</td></tr>
-  {% endfor %}
-</table>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video List</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #fafafa; text-align: center; margin-top: 60px; }
+        h1 { color: #333; }
+        table { border-collapse: collapse; margin: 0 auto; width: 70%; background-color: #fff; box-shadow: 0 0 6px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #ccc; padding: 10px; }
+        th { background-color: #eee; }
+        td a { color: #007bff; text-decoration: none; }
+        td a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>My Videos</h1>
+    <table>
+        <tr>
+            <th>Title</th><th>Year</th><th>Genre</th><th>Actions</th>
+        </tr>
+        <tr>
+            <td>Interstellar</td><td>2014</td><td>Sci-Fi</td><td><a href="#">View</a></td>
+        </tr>
+        <tr>
+            <td>Inception</td><td>2010</td><td>Action</td><td><a href="#">View</a></td>
+        </tr>
+        <tr>
+            <td>The Dark Knight</td><td>2008</td><td>Drama</td><td><a href="#">View</a></td>
+        </tr>
+    </table>
+</body>
+</html>
